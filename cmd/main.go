@@ -12,6 +12,7 @@ func main()  {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/users", handlers.GetAllUsers).Methods(http.MethodGet)
+	router.HandleFunc("/users", handlers.AddUser).Methods(http.MethodPost)
 
 	log.Println("API running!")
 	http.ListenAndServe(":4000", router)
